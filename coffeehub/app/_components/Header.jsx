@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+{/* ************ headlessui ************** */ }
 import {
+    Button,
     Dialog,
     DialogPanel,
     Disclosure,
@@ -12,17 +14,22 @@ import {
     PopoverGroup,
     PopoverPanel,
 } from '@headlessui/react'
+{/* ************* heroicons ************* */ }
 import {
     ArrowPathIcon,
     Bars3Icon,
     ChartPieIcon,
     CursorArrowRaysIcon,
     FingerPrintIcon,
+    ShoppingBagIcon,
     SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
+{/* ************************** */ }
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 
+{/* ************ Products ************** */ }
 const products = [
     { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
     { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
@@ -30,27 +37,30 @@ const products = [
     { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
     { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
 ]
+{/* ************ callsToAction ************** */ }
 const callsToAction = [
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
     { name: 'Contact sales', href: '#', icon: PhoneIcon },
 ]
 
+{/* ************ Header Start ************** */ }
+
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-gray-900">
+        <header className="text-white">
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+                {/* ************************** */}
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
-                        <img
-                            alt=""
-                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                            className="h-8 w-auto"
+                        <Image
+                            src="/images/logo.png" alt="Logo CoffeeHub" width={120} height={40}
                         />
                     </a>
                 </div>
+                {/* ************************** */}
                 <div className="flex lg:hidden">
                     <button
                         type="button"
@@ -61,67 +71,34 @@ const Header = () => {
                         <Bars3Icon aria-hidden="true" className="size-6" />
                     </button>
                 </div>
+                {/* ************************** */}
                 <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-                    <Popover className="relative">
-                        <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white">
-                            Product
-                            <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-500" />
-                        </PopoverButton>
-
-                        <PopoverPanel
-                            transition
-                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
-                        >
-                            <div className="p-4">
-                                {products.map((item) => (
-                                    <div
-                                        key={item.name}
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-white/5"
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-700/50 group-hover:bg-gray-700">
-                                            <item.icon aria-hidden="true" className="size-6 text-gray-400 group-hover:text-white" />
-                                        </div>
-                                        <div className="flex-auto">
-                                            <a href={item.href} className="block font-semibold text-white">
-                                                {item.name}
-                                                <span className="absolute inset-0" />
-                                            </a>
-                                            <p className="mt-1 text-gray-400">{item.description}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="grid grid-cols-2 divide-x divide-white/10 bg-gray-700/50">
-                                {callsToAction.map((item) => (
-                                    <a
-                                        key={item.name}
-                                        href={item.href}
-                                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-white hover:bg-gray-700/50"
-                                    >
-                                        <item.icon aria-hidden="true" className="size-5 flex-none text-gray-500" />
-                                        {item.name}
-                                    </a>
-                                ))}
-                            </div>
-                        </PopoverPanel>
-                    </Popover>
-
-                    <a href="#" className="text-sm/6 font-semibold text-white">
-                        Features
+                    <a href="#" className="text-sm/6 font-semibold text-black">
+                        Cafe Menu
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-white">
-                        Marketplace
+                    <a href="#" className="text-sm/6 font-semibold text-black">
+                        About Us
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-white">
-                        Company
+                    <a href="#" className="text-sm/6 font-semibold text-black">
+                        Find Us
+                    </a>
+                    <a href="#" className="text-sm/6 font-semibold text-black">
+                        Alowishus Catering
                     </a>
                 </PopoverGroup>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" className="text-sm/6 font-semibold text-white">
-                        Log in <span aria-hidden="true">&rarr;</span>
+                {/* ************************** */}
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-5">
+                    <a href="#" className="text-sm/6 font-semibold text-black">
+                        <ShoppingBagIcon
+                            width={35}
+                            className='hover:cursor-pointer bg-gray-50 p-2 rounded-full shadow-xl hover:scale-105 transition-all'
+                        />
                     </a>
+                    <Button className="bg-gray-900 text-white p-3 rounded-md shadow-lg hover:scale-105 transition-all">Buy Gift Vouchers</Button>
                 </div>
+                {/* ************************** */}
             </nav>
+            {/* ************************** */}
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-50" />
                 <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
@@ -195,8 +172,10 @@ const Header = () => {
                     </div>
                 </DialogPanel>
             </Dialog>
+            {/* ************************** */}
         </header>
     )
 }
+{/* ************************** */ }
 
 export default Header;
