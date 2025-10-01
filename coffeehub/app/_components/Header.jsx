@@ -49,8 +49,12 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="text-white">
-            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+   <header className="bg-white container">
+<nav aria-label="Global" className="mx-auto flex max-w-7xl  items-center justify-between p-6 lg:px-8">
+    {/* <header className="text-white">
+<nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"> */}
+
+
                 {/* ************************** */}
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
@@ -73,25 +77,25 @@ const Header = () => {
                 </div>
                 {/* ************************** */}
                 <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-                    <a href="#" className="text-sm/6 font-semibold text-black">
+                    <a href="#" className="text-lg font-medium text-black">
                         Cafe Menu
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-black">
+                    <a href="#" className="text-lg font-medium text-black">
                         About Us
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-black">
+                    <a href="#" className="text-lg font-medium text-black">
                         Find Us
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-black">
+                    <a href="#" className="text-lg font-medium text-black">
                         Alowishus Catering
                     </a>
                 </PopoverGroup>
                 {/* ************************** */}
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-5">
-                    <a href="#" className="text-sm/6 font-semibold text-black">
+                    <a href="#" className="text-sm/6 font-semibold text-gray-900">
                         <ShoppingBagIcon
                             width={35}
-                            className='hover:cursor-pointer bg-gray-50 p-2 rounded-full shadow-xl hover:scale-105 transition-all'
+                            className='hover:cursor-pointer bg-gray-50 hover:bg-gray-100  p-2 rounded-full  shadow-xl shadow-gray-300  hover:shadow-xl hover:scale-105 transition-all'
                         />
                     </a>
                     <Button className="bg-gray-900 text-white p-3 rounded-md shadow-lg hover:scale-105 transition-all">Buy Gift Vouchers</Button>
